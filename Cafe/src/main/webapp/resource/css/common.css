@@ -1,0 +1,275 @@
+@CHARSET "EUC-KR";
+/**기본**/
+.align{
+	text-align: center;
+}
+.none{
+	display:none;
+}
+span{
+	font-family: 'Poor Story', cursive;
+	color: #8A0868
+}
+.cursor{
+	cursor:default;
+}
+
+.font{
+	font-family: 'Poor Story', cursive;
+	color: #8A0868
+}
+.btfont{
+	font-family: 'Poor Story', cursive;
+	color: #FFFFFF;
+	border: 0; 
+	outline: 0;
+	cursor:pointer;
+}
+#back{
+	position:absolute; 
+	z-index:100;
+	font-size: 30px;
+	color: #8A0868;
+	left:10px;
+	top:10px;
+}
+.header{
+	color: #F8E0E6;
+}
+.hspan{
+	float:left;
+	display:inline-block;
+}
+/**전체**/
+.wrapper{
+	width:800px; 
+	position:absolute;
+	left:24%; 
+	float:left;
+	background:linear-gradient(240deg, #F8E0E6, #F6CECE);
+}
+.container{
+	clear:both;
+	width:800px;
+	float:left;
+}
+/**팝업**/
+.popUp{
+	 width:300px; 
+	 height:300px;  
+	 z-index:100; 
+	 background-color: #F6CECE; 
+	 position:relative;
+	 display : none;
+	 margin-left:150px;
+	 margin-top:40px;
+	 border: 4px solid #B40486;
+}
+#close{
+	 z-index:100; 
+	 position:absolute;
+	 right:0px;
+}
+.in_popup{
+	 width:150px; 
+	 z-index:100; 
+	 position:absolute;
+	 text-align:center;
+	 left:75px;
+	 top:20px;
+}
+
+/**가격**/
+.totalbox{
+	width:200px; 
+	height:400px;
+	float:right;
+	background:linear-gradient(240deg, #F8E0E6, #F6CECE);
+}
+.append{
+	background-color: #E0ECF8; 
+	height:300px;
+}
+#totalPrice{
+	width:200px;
+	height:37px;
+    padding-top:13px;
+    text-align:center;
+	float:left;
+}
+#cancel{
+	width:100px;
+	height:50px;
+	text-align:center;
+	float:left;
+	background-color:#F5A9E1;
+}
+#pay{
+	width:100px;
+	height:50px;
+	text-align:center;
+	float:left;
+	background-color:#8A0868;
+}
+#pay2{
+	width:100px;
+	height:50px;
+	text-align:center;
+	float:left;
+	background-color:#8A0868;
+}
+.cartbox{
+	font-family: 'Poor Story', cursive;
+	padding-top: 15px;
+	height: 35px;
+	border-bottom: 2px solid #F781D8;
+	color:#8A4B08;
+	font-weight: bold; 
+}
+/**가입체크**/
+.userchkbox{
+	width:600px; 
+	height:400px;
+	float:left;
+	position:relative; 
+	background:linear-gradient(240deg, #F8E0E6, #F6CECE);
+}
+.loginYN{
+	height:300px;
+	padding-top:100px;
+	float:left;
+	text-align:center;
+	position:relative;
+}
+#point{
+	width:100px;
+	height:150px;
+	text-align:center;
+	margin-left:180px;
+	margin-right:20px;
+	float:left;
+}
+#nouserpay{
+	width:100px;
+	height:150px;
+	text-align:center;
+	float:left;
+}
+.phoneNum{
+	 width:150px;
+	 height:40px;
+	 border: 0;
+}
+.phonesubmit{
+	 width:150px;
+	 height:35px;
+	 border: 0; 
+}
+.joinsubmit{
+	 width:73px;
+	 height:35px;
+	 border: 0; 
+}
+#join{
+	position:absolute; 
+	top:270px; 
+	left:255px;
+}
+/**쿠폰**/
+.couponbox{
+	width:600px; 
+	height:400px;
+	float:left;
+	background:linear-gradient(240deg, #F8E0E6, #F6CECE);
+	position:relative; 
+}
+.couponuser{
+	height:80px;
+	text-align:center;
+}
+.couponusername{
+	width:600px; 
+	height:30px;
+	text-align:center;
+	float:left;
+	padding-top:10px;
+}
+.couponuse{
+	width:600px;
+	height:250px;
+	text-align:center;
+}
+.couponview{
+	width:600px;
+	height:150px;
+	text-align:center;
+}
+.couponshape{
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	background-color: red;
+	margin : 0 5px 15px 25px;
+	float:left;
+}
+.couponshapewill{
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	background-color: blue;
+	margin-right:5px;
+	margin-left:8px;
+	float:left;
+}
+.couponYN{
+	width:600px;
+	height:70px;
+	text-align:center;
+	float:left;
+}
+#couponY{
+	width:100px;
+	height:50px;
+	text-align:center;
+	float:left;
+	margin-left:200px;
+}
+#couponN{
+	width:100px;
+	height:50px;
+	text-align:center;
+	float:left;
+}
+.couponchk{
+	border: 4px solid #B40486;
+	background-color: #ff0080;
+	font-size: 15px;
+}
+/**결제**/
+#finalPay{
+	height:100px; 
+	float:left;
+	width:600px; 
+	text-align:center; 
+	display:none;
+}
+#main{
+	position:absolute; 
+	top:270px; 
+	left:260px;
+}
+#userDelete{
+	position:absolute; 
+	top:320px; 
+	left:200px;
+}
+#userUpdate{
+	position:absolute; 
+	top:320px; 
+	left:300px;
+}
+
+.payBt{
+	background-color: #8A0868; 
+	font-size:15px;
+}

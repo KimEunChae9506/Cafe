@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+	<mapper namespace="com.ec.cafe.mapper.CafeMapper"> <!--필요함 -->
+	<resultMap type="com.ec.cafe.vo.CafeVO" id="menu">
+		<id property = "id" column = "id"></id>
+		<result property = "names" column = "name"/>
+		<result property = "price" column = "price"/>
+		<result property = "stock" column = "stock"/>
+		<result property = "cafe" column = "cafe"/>
+		<result property = "originStock" column = "originStock"/>
+	</resultMap>
+	<resultMap type="com.ec.cafe.vo.UserVo" id="user">
+		<result property = "phone" column = "phone"/>
+		<result property = "name" column = "name"/>
+		<result property = "coupon" column = "coupon"/>
+	</resultMap>
+	
+	<select id="menuList" resultMap = "menu">
+		select id, name, price, stock, cafe , originStock
+		 		from cafe 
+	</select>
+	
+	<select id="userList" resultMap = "user" parameterType="String">
+		select phone, name, coupon
+			from user where phone = #{phone}
+	</select>
+	
+	<select id="selectone" resultMap = "menu" parameterType="String">
+		select id, stock, originStock
+		 		from cafe where id = #{id}
+	</select>
+	
+	<insert id="join"  parameterType="com.ec.cafe.vo.UserVo">
+		insert into user values (#{phone}, #{name}, 0) 
+	</insert>
+	 <!-- 회원 쿠폰 써서 10개 차감 -->
+	<update id="update" parameterType="com.ec.cafe.vo.UserVo">
+	 	update user set coupon = (coupon + #{aftercoupon} - 10)
+	              where  phone = #{phone}
+	</update>
+	<!-- 회원 쿠폰 써서 10개이상 차감 / 쿠폰 2개 이상 쓸 시 -->
+	<update id="updateMore" parameterType="com.ec.cafe.vo.UserVo">
+	 	update user set coupon = (coupon + #{aftercoupon} - (10 * #{morecoupon}))
+	              where  phone = #{phone}
+	</update>
+	<!-- 쿠폰적립 -->
+	<update id="couponUpdate" parameterType="com.ec.cafe.vo.UserVo">
+	 	update user set coupon = (coupon + #{coupon})
+	              where  phone = #{phone}
+	</update>
+	
+	<insert id="orders" parameterType="com.ec.cafe.vo.CartVO">
+		insert into orders (id, name, num, price, shot,time) 
+		values(#{id}, #{names}, #{num}, #{price}, #{shot}, DEFAULT);
+	</insert>
+	
+	<update id="stock" parameterType="com.ec.cafe.vo.CafeVO">
+	 	update cafe set stock = #{stock}
+	              where  id = #{id}
+	</update>
+	
+	<update id = "update_user" parameterType="com.ec.cafe.vo.UserVo">
+		update user set phone = #{phone2}
+				where phone = #{phone}
+	</update>
+	
+	<delete id = "delete_user" parameterType="String">
+		delete from user where phone = #{phone}
+	</delete>
+	
+	</mapper>
